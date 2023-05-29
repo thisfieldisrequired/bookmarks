@@ -4,7 +4,8 @@ from django.urls import path, include
 from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView, PasswordChangeDoneView, \
                                       PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, \
                                       PasswordResetCompleteView
-from .views import user_login, dashboard, register
+from .views import user_login, dashboard, register, edit
+
 
 urlpatterns = [
     # path('login/', user_login, name='login'),
@@ -19,6 +20,7 @@ urlpatterns = [
     path('', include('django.contrib.auth.urls')),
     path('', dashboard, name='dashboard'),
     path('register/', register, name='register'),
+    path('edit/', edit, name='edit'),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
