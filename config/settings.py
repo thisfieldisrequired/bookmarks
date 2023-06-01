@@ -34,6 +34,7 @@ SITE_ID = 1
 
 INSTALLED_APPS = [
     'account.apps.AccountConfig',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,7 +45,7 @@ INSTALLED_APPS = [
     'social_django',
     'django_extensions',
 
-
+    'images.apps.ImagesConfig',
 
 ]
 
@@ -63,7 +64,6 @@ ROOT_URLCONF = 'config.urls'
 LOGIN_REDIRECT_URL = 'dashboard'
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
-
 
 
 TEMPLATES = [
