@@ -14,6 +14,7 @@ django-extensions = "^3.2.1"
 werkzeug = "^2.3.4"
 pyopenssl = "^23.2.0"
 requests = "^2.31.0"
+easy-thumbnails = "^2.8.5"
 
 
 [build-system]
