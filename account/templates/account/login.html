@@ -1,10 +1,10 @@
-{% extends './base.html' %}
+{% extends 'account/base.html' %}
 
 {% block title %}Log-in{% endblock title %}
 
 {% block content %}
     <h1>Log-in</h1>
-    <p>Use the form to log-in</p>
+    <p>Use the form to log-in!!!</p>
     <form method="post">
         {{ form.as_p }}
         {% csrf_token %}
