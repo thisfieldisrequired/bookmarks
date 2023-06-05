@@ -4,7 +4,9 @@ from django.urls import path, include
 from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView, PasswordChangeDoneView, \
                                       PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, \
                                       PasswordResetCompleteView
-from .views import user_login, dashboard, register, edit
+
+from . import views
+
 
 
 urlpatterns = [
@@ -18,8 +20,11 @@ urlpatterns = [
     # path('password-reset/<uidb64>/<token>/', PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
     # path('password-reset/complete/', PasswordResetCompleteView.as_view(), name='password_reset_complete'),
     path('', include('django.contrib.auth.urls')),
-    path('', dashboard, name='dashboard'),
-    path('register/', register, name='register'),
-    path('edit/', edit, name='edit'),
+    path('', views.dashboard, name='dashboard'),
+    path('register/', views.register, name='register'),
+    path('edit/', views.edit, name='edit'),
+    path('users/', views.user_list, name='user_list'),
+    path('users/follow/', views.user_follow, name='user_follow'),
+    path('users/<username>/', views.user_detail, name='user_detail'),
 ]
 
