@@ -25,6 +25,14 @@ SECRET_KEY = 'django-insecure-*wp$gxw_0#=yho!_70qy&o#125&@-s0#0a$(#1)(qtkbm)=+!s
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
+if DEBUG:
+    import mimetypes
+
+    mimetypes.add_type('application/javascript', '.js', True)
+    mimetypes.add_type('text/css', '.css', True)
+
+
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'mysite.com']
 
 SITE_ID = 1
@@ -44,12 +52,15 @@ INSTALLED_APPS = [
     'social_django',
     'django_extensions',
     'easy_thumbnails',
+    'debug_toolbar',
 
     'images.apps.ImagesConfig',
+    'actions.apps.ActionsConfig',
 
 ]
 
 MIDDLEWARE = [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -188,3 +199,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
+INTERNAL_IPS = [
+    '127.0.0.1',
+]
+
+REDIS_HOST = 'localhost'
+REDIS_PORT = 6379
+REDIS_DB = 0
