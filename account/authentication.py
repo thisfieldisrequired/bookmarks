@@ -3,6 +3,8 @@ from .models import Profile
 
 
 class EmailAuthBackend:
+    """Аутентификация по имейлу"""
+
     def authenticate(self, request, username=None, password=None):
         user = User.objects.get(email=username)
         try:
@@ -21,4 +23,5 @@ class EmailAuthBackend:
 
 
 def create_profile(backend, user, *args, **kwargs):
+    """Создание профиля пользователя при регистрации"""
     Profile.objects.get_or_create(user=user)
