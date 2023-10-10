@@ -11,10 +11,3 @@
 
 - Django 4
 - Redis    
-
-# Запуска программы 
-
-+ Docker compose. Настоятельно рекомендую использовать этот метод
-    ```
-    docker compose up -d --build
-    ```
