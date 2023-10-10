@@ -10,4 +10,12 @@
 # Инструменты
 
 - Django 4
-- Redis    
+- Redis
+- Django Debug Tool
+
+# Способы запуска программмы 
+
++ Docker compose
++ ```
+    docker compose build
+    ```
