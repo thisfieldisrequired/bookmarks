@@ -10,4 +10,5 @@
 # Инструменты
 
 - Django 4
-- Redis    
+- Redis
+- Django Debug Tool
